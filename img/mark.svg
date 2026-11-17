@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- STAND-IN: a rebuild of the Oasis Achievers mark from a 120 px mockup crop. Used as a CSS mask; the gradient is painted in CSS. Replace with the real vector logo. -->
+  <g fill="none" stroke="#000" stroke-linecap="round">
+    <path d="M83.8 62.3A36 36 0 1 0 62.3 83.8" stroke-width="15"/>
+    <path d="M46 44V78" stroke-width="19"/>
+  </g>
+</svg>

@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Preview build: keep out of search engines until production is approved. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Oasis Achievers</title>
+  <meta name="description" content="Oasis Achievers is a youth mentorship organization for high school juniors and seniors, starting in Baltimore. Where young ideas grow.">
+  <meta name="theme-color" content="#F8F2EE">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="vendor/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="vendor/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="img/hero/together-900.webp" imagesrcset="img/hero/together-900.webp 900w, img/hero/together-1600.webp 1600w" imagesizes="(orientation: portrait) 160vw, 50vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="logo" href="#top" aria-label="Oasis Achievers, back to top">
+      <span class="mark" aria-hidden="true"><span class="mark__ink"></span></span>
+      <span class="logo__word">oasis achievers</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav__link" href="#vision">Vision</a>
+      <a class="site-nav__link" href="#offer">What We Offer</a>
+      <a class="site-nav__link" href="#connect">Connect</a>
+      <a class="pill pill--periwinkle" href="#connect"><span class="pill__label">Get Involved</span></a>
+    </nav>
+    <button class="menu-btn" type="button" data-menu-open aria-haspopup="dialog" aria-controls="menu" aria-label="Open menu">
+      <span class="menu-btn__bars" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <dialog class="menu" id="menu" aria-label="Menu">
+    <div class="menu__bar">
+      <span class="logo" aria-hidden="true">
+        <span class="mark"><span class="mark__ink"></span></span>
+        <span class="logo__word">oasis achievers</span>
+      </span>
+      <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="menu__nav" aria-label="Menu">
+      <a class="menu__link" href="#vision" style="--i:0">vision</a>
+      <a class="menu__link" href="#offer" style="--i:1">what we offer</a>
+      <a class="menu__link" href="#connect" style="--i:2">connect</a>
+    </nav>
+    <a class="pill pill--periwinkle menu__cta" href="#connect"><span class="pill__label">Get Involved</span></a>
+  </dialog>
+
+  <main id="main">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero sheet" id="top" aria-label="Oasis Achievers">
+      <div class="hero__title-wrap">
+        <h1 class="hero__title">
+          <span class="mark mark--hero" aria-hidden="true"><span class="mark__ink"></span></span>
+          <span class="hero__oasis">oasis</span>
+          <span class="hero__word-clip"><span class="hero__word" data-fit="hero">achievers</span></span>
+        </h1>
+      </div>
+      <div class="hero__field"></div>
+
+      <!-- Slides: the first is in the HTML; the rest are listed in img/hero/slides.json. -->
+      <div class="hero__figures" data-hero>
+        <img class="hero__figure is-active"
+             src="img/hero/together-900.webp"
+             srcset="img/hero/together-900.webp 900w, img/hero/together-1600.webp 1600w"
+             sizes="(orientation: portrait) 160vw, 50vw"
+             width="1600" height="1063" fetchpriority="high" decoding="async"
+             alt="Three high school students stand together with their arms around each other, smiling and looking ahead.">
+      </div>
+
+      <div class="hero__band">
+        <p class="label hero__line hero__line--a">Where young <br>ideas grow</p>
+        <p class="label hero__line hero__line--b">Believe · Build · <br>Belong · Become</p>
+      </div>
+
+      <div class="hero__controls" data-hero-controls role="group" aria-label="Hero pictures" hidden>
+        <div class="dashes" data-hero-dashes></div>
+        <button class="icon-btn icon-btn--small" type="button" data-hero-toggle aria-pressed="false" aria-label="Pause the changing pictures">
+          <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 6v12M16 6v12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ 2. VISION ============ -->
+    <section class="vision sheet" id="vision" aria-labelledby="vision-label">
+      <h2 class="label label--rule vision__label" id="vision-label" style="--c:var(--believe)">Our Vision</h2>
+
+      <ul class="pillars" role="list" data-pillars>
+        <li class="pillar pillar--believe" data-pillar="believe" data-line="Believe in what’s possible" style="--c:var(--believe);--on:var(--white);--i:0">
+          <h3 class="pillar__h">
+            <button class="pillar__btn" type="button" aria-haspopup="dialog" aria-label="believe: Believe in what’s possible. Open full screen.">
+              <span class="pillar__field"></span>
+              <span class="pillar__word">believe</span>
+              <img class="pillar__figure" src="img/vision/believe-700.webp" srcset="img/vision/believe-700.webp 1x, img/vision/believe-1400.webp 2x" width="552" height="700" loading="lazy" decoding="async"
+                   alt="A student sits on the ground with her arms resting on her knees, looking up.">
+            </button>
+          </h3>
+        </li>
+        <li class="pillar pillar--build" data-pillar="build" data-line="Turn ideas into reality" style="--c:var(--build);--on:var(--ink);--i:1">
+          <h3 class="pillar__h">
+            <button class="pillar__btn" type="button" aria-haspopup="dialog" aria-label="build: Turn ideas into reality. Open full screen.">
+              <span class="pillar__field"></span>
+              <span class="pillar__word">build</span>
+              <img class="pillar__figure" src="img/vision/build-700.webp" srcset="img/vision/build-700.webp 1x, img/vision/build-1400.webp 2x" width="560" height="700" loading="lazy" decoding="async"
+                   alt="A student sits on a folding chair, absorbed in solving a Rubik’s cube.">
+            </button>
+          </h3>
+        </li>
+        <li class="pillar pillar--belong" data-pillar="belong" data-line="A space to grow together" style="--c:var(--belong);--on:var(--white);--i:2">
+          <h3 class="pillar__h">
+            <button class="pillar__btn" type="button" aria-haspopup="dialog" aria-label="belong: A space to grow together. Open full screen.">
+              <span class="pillar__field"></span>
+              <span class="pillar__word" data-notch>belong</span>
+              <img class="pillar__figure" src="img/vision/belong-700.webp" srcset="img/vision/belong-700.webp 1x, img/vision/belong-1400.webp 2x" width="1041" height="700" loading="lazy" decoding="async"
+                   alt="Three students sit close together on the ground, laughing.">
+            </button>
+          </h3>
+        </li>
+        <li class="pillar pillar--become" data-pillar="become" data-line="Grow into what’s next" style="--c:var(--become);--on:var(--white);--i:3">
+          <h3 class="pillar__h">
+            <button class="pillar__btn" type="button" aria-haspopup="dialog" aria-label="become: Grow into what’s next. Open full screen.">
+              <span class="pillar__field"></span>
+              <span class="pillar__word">become</span>
+              <img class="pillar__figure" src="img/vision/become-700.webp" srcset="img/vision/become-700.webp 1x, img/vision/become-1400.webp 2x" width="558" height="700" loading="lazy" decoding="async"
+                   alt="A student with a backpack walks forward in mid-stride, looking ahead.">
+            </button>
+          </h3>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ 3. WHAT WE OFFER ============ -->
+    <section class="offer sheet" id="offer" aria-labelledby="offer-label" data-offer>
+      <h2 class="label label--rule offer__label" id="offer-label" style="--c:var(--build)">What We Offer</h2>
+
+      <div class="offer__viewport" data-offer-viewport tabindex="0" role="region" aria-roledescription="carousel" aria-label="What we offer. Use the left and right arrow keys to move between the four offerings.">
+        <ol class="offer__track" role="list">
+          <li class="offer__slide is-active" data-offer-slide style="--c:var(--believe)">
+            <div class="offer__frame">
+              <picture>
+                <source media="(min-width: 900px)" srcset="img/offer/mentorship-wide-1440.webp 1440w, img/offer/mentorship-wide-2400.webp 2400w" sizes="100vw">
+                <img class="offer__photo" src="img/offer/mentorship-tall-720.webp" srcset="img/offer/mentorship-tall-720.webp 720w, img/offer/mentorship-tall-1080.webp 1080w" sizes="86vw" width="1080" height="1626" loading="lazy" decoding="async"
+                     alt="A student talks with a mentor across a table, an open notebook between them.">
+              </picture>
+              <div class="offer__caption">
+                <h3 class="offer__name">mentorship</h3>
+                <p class="label offer__line"><span>Real guidance.</span> <span>Someone in your corner.</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="offer__slide" data-offer-slide style="--c:var(--build)">
+            <div class="offer__frame">
+              <picture>
+                <source media="(min-width: 900px)" srcset="img/offer/workshops-wide-1440.webp 1440w, img/offer/workshops-wide-2400.webp 2400w" sizes="100vw">
+                <img class="offer__photo" src="img/offer/workshops-tall-720.webp" srcset="img/offer/workshops-tall-720.webp 720w, img/offer/workshops-tall-1080.webp 1080w" sizes="86vw" width="1080" height="1626" loading="lazy" decoding="async"
+                     alt="A student stands at a worktable and presents her idea to classmates.">
+              </picture>
+              <div class="offer__caption">
+                <h3 class="offer__name">workshops</h3>
+                <p class="label offer__line"><span>Learn by doing.</span> <span>Grow by leading.</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="offer__slide" data-offer-slide style="--c:var(--belong)">
+            <div class="offer__frame">
+              <picture>
+                <source media="(min-width: 900px)" srcset="img/offer/community-wide-1440.webp 1440w, img/offer/community-wide-2400.webp 2400w" sizes="100vw">
+                <img class="offer__photo" src="img/offer/community-tall-720.webp" srcset="img/offer/community-tall-720.webp 720w, img/offer/community-tall-1080.webp 1080w" sizes="86vw" width="1080" height="1626" loading="lazy" decoding="async"
+                     alt="Five friends sit close together on front steps, laughing.">
+              </picture>
+              <div class="offer__caption">
+                <h3 class="offer__name">community</h3>
+                <p class="label offer__line"><span>Find your people.</span> <span>Grow together.</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="offer__slide" data-offer-slide style="--c:var(--become)">
+            <div class="offer__frame">
+              <picture>
+                <source media="(min-width: 900px)" srcset="img/offer/nextsteps-wide-1440.webp 1440w, img/offer/nextsteps-wide-2400.webp 2400w" sizes="100vw">
+                <img class="offer__photo" src="img/offer/nextsteps-tall-720.webp" srcset="img/offer/nextsteps-tall-720.webp 720w, img/offer/nextsteps-tall-1080.webp 1080w" sizes="86vw" width="1080" height="1626" loading="lazy" decoding="async"
+                     alt="Three students walk across a campus; one points the way ahead.">
+              </picture>
+              <div class="offer__caption">
+                <h3 class="offer__name">next steps</h3>
+                <p class="label offer__line"><span>Explore your options.</span> <span>Shape your future.</span></p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Mobile: timer bars and the emblem. Desktop: the four names. Both read one state in site.js. -->
+      <div class="offer__progress">
+        <div class="offer__bars" aria-hidden="true">
+          <span class="bar" style="--c:var(--believe)"><span class="bar__fill" data-offer-fill></span></span>
+          <span class="bar" style="--c:var(--build)"><span class="bar__fill" data-offer-fill></span></span>
+          <span class="bar" style="--c:var(--belong)"><span class="bar__fill" data-offer-fill></span></span>
+          <span class="bar" style="--c:var(--become)"><span class="bar__fill" data-offer-fill></span></span>
+        </div>
+        <span class="emblem" aria-hidden="true" data-offer-emblem>
+          <span class="mark mark--ghost"><span class="mark__ink"></span></span>
+          <span class="mark emblem__colour"><span class="mark__ink"></span></span>
+        </span>
+        <button class="icon-btn icon-btn--small offer__toggle" type="button" data-offer-toggle aria-pressed="false" aria-label="Pause the changing photographs">
+          <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 6v12M16 6v12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+
+      <div class="offer__nav" role="group" aria-label="Choose an offering">
+        <button class="offer__tab" type="button" data-offer-tab style="--c:var(--believe)"><span class="offer__tab-name">mentorship</span><span class="bar bar--light"><span class="bar__fill" data-offer-fill-wide></span></span></button>
+        <button class="offer__tab" type="button" data-offer-tab style="--c:var(--build)"><span class="offer__tab-name">workshops</span><span class="bar bar--light"><span class="bar__fill" data-offer-fill-wide></span></span></button>
+        <button class="offer__tab" type="button" data-offer-tab style="--c:var(--belong)"><span class="offer__tab-name">community</span><span class="bar bar--light"><span class="bar__fill" data-offer-fill-wide></span></span></button>
+        <button class="offer__tab" type="button" data-offer-tab style="--c:var(--become)"><span class="offer__tab-name">next steps</span><span class="bar bar--light"><span class="bar__fill" data-offer-fill-wide></span></span></button>
+      </div>
+
+      <p class="sr-only" aria-live="polite" data-offer-live></p>
+    </section>
+
+    <!-- ============ 4. CONNECT ============ -->
+    <section class="connect sheet" id="connect" aria-labelledby="connect-title" data-connect>
+      <div class="connect__main">
+        <div class="connect__lead">
+          <h2 class="connect__title" id="connect-title">
+            <span class="connect__ima">I’m a</span>
+            <span class="connect__script" data-script style="--c:var(--student)">student</span>
+          </h2>
+
+          <!-- Upcoming event: remove "hidden" and fill in the text when there is one. -->
+          <p class="connect__event" data-event hidden></p>
+
+          <button class="pill pill--ink connect__cta" type="button" data-form-open aria-haspopup="dialog" aria-controls="connect-form">
+            <span class="pill__label">Keep in touch</span>
+          </button>
+        </div>
+
+        <div class="connect__tabs" role="group" aria-label="I’m a" data-tabs>
+          <button class="connect__tab" type="button" data-aud="student" aria-pressed="true" style="--c:var(--student)">student</button>
+          <button class="connect__tab" type="button" data-aud="parent" aria-pressed="false" style="--c:var(--parent)">parent</button>
+          <button class="connect__tab" type="button" data-aud="mentor" aria-pressed="false" style="--c:var(--mentor)">mentor</button>
+          <button class="connect__tab" type="button" data-aud="school partner" aria-pressed="false" style="--c:var(--partner)">school partner</button>
+          <span class="connect__underline" data-underline aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <dialog class="form-sheet" id="connect-form" aria-labelledby="form-title" data-form-sheet>
+        <div class="form-sheet__inner">
+          <div class="form-sheet__head">
+            <p class="form-sheet__title" id="form-title">I’m a <span class="form-sheet__aud" data-form-aud>student</span></p>
+            <button class="icon-btn" type="button" data-form-close aria-label="Close the form">
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <p class="demo-note">Demo form. Nothing you type here is sent or saved.</p>
+
+          <!-- STUDENT (minors: the minimum; flagged in DECISIONS.md for review) -->
+          <form class="form" data-form="student" novalidate hidden>
+            <div class="field"><label for="st-name">First name</label><input id="st-name" name="first-name" type="text" autocomplete="given-name" required><p class="field__error" id="st-name-e" hidden></p></div>
+            <div class="field"><label for="st-grade">Grade</label>
+              <select id="st-grade" name="grade" required>
+                <option value="" selected disabled>Choose one</option>
+                <option>Junior (11th grade)</option>
+                <option>Senior (12th grade)</option>
+              </select><p class="field__error" id="st-grade-e" hidden></p></div>
+            <div class="field"><label for="st-reach">How to reach you <span class="field__hint">an email or phone number</span></label><input id="st-reach" name="reach" type="text" autocomplete="off" required><p class="field__error" id="st-reach-e" hidden></p></div>
+            <div class="field"><label for="st-hope">What you hope to get from this <span class="field__hint">optional</span></label><textarea id="st-hope" name="hope" rows="2"></textarea></div>
+            <button class="pill pill--ink form__submit" type="submit"><span class="pill__label">Keep in touch</span></button>
+          </form>
+
+          <!-- PARENT -->
+          <form class="form" data-form="parent" novalidate hidden>
+            <div class="field"><label for="pa-name">Name</label><input id="pa-name" name="name" type="text" autocomplete="name" required><p class="field__error" id="pa-name-e" hidden></p></div>
+            <div class="field"><label for="pa-grade">Your student’s grade</label>
+              <select id="pa-grade" name="grade" required>
+                <option value="" selected disabled>Choose one</option>
+                <option>Junior (11th grade)</option>
+                <option>Senior (12th grade)</option>
+                <option>Another grade</option>
+              </select><p class="field__error" id="pa-grade-e" hidden></p></div>
+            <div class="field"><label for="pa-email">Email</label><input id="pa-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error" id="pa-email-e" hidden></p></div>
+            <div class="field"><label for="pa-q">A question <span class="field__hint">optional</span></label><textarea id="pa-q" name="question" rows="2"></textarea></div>
+            <button class="pill pill--ink form__submit" type="submit"><span class="pill__label">Keep in touch</span></button>
+          </form>
+
+          <!-- MENTOR -->
+          <form class="form" data-form="mentor" novalidate hidden>
+            <div class="field"><label for="me-name">Name</label><input id="me-name" name="name" type="text" autocomplete="name" required><p class="field__error" id="me-name-e" hidden></p></div>
+            <div class="field"><label for="me-do">What you do</label><input id="me-do" name="work" type="text" autocomplete="organization-title" required><p class="field__error" id="me-do-e" hidden></p></div>
+            <div class="field"><label for="me-help">How you would like to help</label><textarea id="me-help" name="help" rows="2" required></textarea><p class="field__error" id="me-help-e" hidden></p></div>
+            <div class="field"><label for="me-email">Email</label><input id="me-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error" id="me-email-e" hidden></p></div>
+            <button class="pill pill--ink form__submit" type="submit"><span class="pill__label">Keep in touch</span></button>
+          </form>
+
+          <!-- SCHOOL PARTNER -->
+          <form class="form" data-form="school partner" novalidate hidden>
+            <div class="field"><label for="sp-name">Name</label><input id="sp-name" name="name" type="text" autocomplete="name" required><p class="field__error" id="sp-name-e" hidden></p></div>
+            <div class="field"><label for="sp-org">School or organisation</label><input id="sp-org" name="organisation" type="text" autocomplete="organization" required><p class="field__error" id="sp-org-e" hidden></p></div>
+            <div class="field"><label for="sp-role">Role</label><input id="sp-role" name="role" type="text" autocomplete="organization-title" required><p class="field__error" id="sp-role-e" hidden></p></div>
+            <div class="field"><label for="sp-email">Email</label><input id="sp-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error" id="sp-email-e" hidden></p></div>
+            <button class="pill pill--ink form__submit" type="submit"><span class="pill__label">Keep in touch</span></button>
+          </form>
+
+          <div class="form-done" data-form-done hidden tabindex="-1">
+            <p class="form-done__title">This is a demo.</p>
+            <p>Nothing was sent or saved. The form is not connected yet.</p>
+            <button class="pill pill--ink" type="button" data-form-close><span class="pill__label">Close</span></button>
+          </div>
+        </div>
+      </dialog>
+
+      <footer class="site-footer">
+        <a class="logo logo--small" href="#top" aria-label="Oasis Achievers, back to top">
+          <span class="mark" aria-hidden="true"><span class="mark__ink"></span></span>
+          <span class="logo__word">oasis achievers</span>
+        </a>
+        <!-- DEVELOPMENT PLACEHOLDERS: the contact email and social links have not been supplied. -->
+        <p class="site-footer__item"><span class="placeholder" data-placeholder>Contact email to come</span></p>
+        <p class="site-footer__item"><span class="placeholder" data-placeholder>Social links to come</span></p>
+        <p class="site-footer__item site-footer__copy">© 2026 Oasis Achievers</p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Vision full-screen stage. Its panels are cloned from the strips above by site.js, so the two views share one set of assets. -->
+  <dialog class="stage" id="vision-stage" aria-label="Our Vision" data-stage>
+    <div class="stage__paper" data-stage-paper></div>
+    <div class="stage__track" data-stage-track></div>
+    <div class="stage__chrome" data-stage-chrome>
+      <div class="stage__bar">
+        <button class="icon-btn" type="button" data-stage-close aria-label="Back to the overview">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="logo logo--small" aria-hidden="true">
+          <span class="mark"><span class="mark__ink"></span></span>
+          <span class="logo__word">oasis achievers</span>
+        </span>
+        <button class="icon-btn icon-btn--solid" type="button" data-stage-close aria-label="Close">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p class="label label--rule stage__label" data-stage-label>Our Vision</p>
+      <button class="icon-btn stage__arrow stage__arrow--prev" type="button" data-stage-prev aria-label="Previous">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn stage__arrow stage__arrow--next" type="button" data-stage-next aria-label="Next">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <p class="sr-only" aria-live="polite" data-stage-live></p>
+  </dialog>
+
+  <div class="grain" aria-hidden="true"></div>
+  <script src="js/site.js" defer></script>
+</body>
+</html>
