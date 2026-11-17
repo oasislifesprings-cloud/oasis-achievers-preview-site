@@ -632,11 +632,24 @@
   };
   const moveUnderlineTo = (i) => { const keep = connect.i; connect.i = i; moveUnderline(); tabEls.forEach((t, n) => t.setAttribute('aria-pressed', n === i ? 'true' : 'false')); connect.i = keep; };
 
-  /* ---- Demo forms: validated in the browser, never sent anywhere ---- */
+  /* ---- Forms: validated in the browser. The page sends and stores nothing; a valid form
+     opens a pre-filled email in the visitor's own email app, addressed by audience. ---- */
+  const mailFor = (word) => tabEls[AUD.indexOf(word)].dataset.mail;
+  const mailto = (form, word) => {
+    const lines = [`I'm a ${word}.`, ''];
+    $$('input, select, textarea', form).forEach((input) => {
+      const value = input.value.trim();
+      const label = $(`label[for="${input.id}"]`);
+      if (value && label) lines.push(`${label.firstChild.textContent.trim()}: ${value}`);
+    });
+    return `mailto:${mailFor(word)}?subject=${encodeURIComponent(`Oasis Achievers: I'm a ${word}`)}&body=${encodeURIComponent(lines.join('\r\n'))}`;
+  };
   const showForm = (word) => {
     $$('.form', formSheet).forEach((f) => { f.hidden = f.dataset.form !== word; });
     $('[data-form-done]', formSheet).hidden = true;
     $('[data-form-aud]', formSheet).textContent = word;
+    $('[data-form-mail]', formSheet).textContent = mailFor(word);
+    $('.form-note', formSheet).hidden = false;
     const form = $(`.form[data-form="${word}"]`, formSheet);
     $$('.field, .form__submit', form).forEach((el, n) => el.style.setProperty('--n', n));
     return form;
@@ -709,7 +722,7 @@
 
     $$('.form', formSheet).forEach((form) => {
       form.addEventListener('submit', (e) => {
-        e.preventDefault();             // front-end demo: no request is ever made
+        e.preventDefault();             // front-end only: the page never makes a request
         const inputs = $$('input, select, textarea', form);
         let firstBad = null;
         inputs.forEach((input) => {
@@ -718,11 +731,21 @@
           if (message && !firstBad) firstBad = input;
         });
         if (firstBad) { firstBad.focus(); return; }
+        const word = form.dataset.form;
+        const address = mailFor(word);
+        const done = $('[data-form-done]', formSheet);
+        const link = $('[data-mail-link]', done);
+        const copyBtn = $('[data-mail-copy]', done);
+        link.href = mailto(form, word);
+        link.textContent = address;
+        copyBtn.dataset.copy = address;
+        copyBtn.setAttribute('aria-label', `Copy ${address}`);
         form.hidden = true;
         form.reset();
-        const done = $('[data-form-done]', formSheet);
+        $('.form-note', formSheet).hidden = true;   // the confirmation says the same thing
         done.hidden = false;
         done.focus();
+        link.click();                   // hands the message to the visitor's email app
       });
       form.addEventListener('input', (e) => { if (e.target.getAttribute('aria-invalid')) setError(e.target, validate(e.target)); });
     });
@@ -735,6 +758,35 @@
       connect.start = () => { if (view.connect) { connect.start = null; scriptEl.style.clipPath = ''; cycle(); } };
       connect.start();
     }
+  };
+
+  /* ---- Copy buttons: put the address on the clipboard and say so ---- */
+  const copyText = async (text, near) => {
+    try { await navigator.clipboard.writeText(text); return true; } catch (e) { /* older browsers: fall through */ }
+    const field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.cssText = 'position:fixed;left:-9999px;top:0;';
+    (near.closest('dialog') || document.body).append(field);
+    field.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { /* not available */ }
+    field.remove();
+    return ok;
+  };
+  const initCopy = () => {
+    const status = $('[data-copy-status]');
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+      const address = btn.dataset.copy;
+      const ok = await copyText(address, btn);
+      btn.textContent = ok ? 'Copied' : 'Not copied';
+      btn.classList.toggle('is-copied', ok);
+      if (status) status.textContent = ok ? `Copied ${address}` : `Could not copy. The address is ${address}`;
+      clearTimeout(btn.copyTimer);
+      btn.copyTimer = setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); if (status) status.textContent = ''; }, 2200);
+    });
   };
 
   /* ---------------------------------------------------------------
@@ -762,6 +814,7 @@
   initVision();
   initOffer();
   initConnect();
+  initCopy();
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onResize);
   if (document.fonts && document.fonts.ready) {

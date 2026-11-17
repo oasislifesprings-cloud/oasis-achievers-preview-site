@@ -602,7 +602,29 @@ dialog::backdrop { background: none; }
   transition: transform var(--d3) var(--ease-out), background-color var(--d3) var(--ease-out);
 }
 
+/* ---- Contact addresses: always visible text. The mailto link and the copy button are conveniences. ---- */
+.contact { display: grid; gap: var(--s1) var(--s7); margin: 0; padding: 0; list-style: none; }
+.contact__row { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--s1); }
+.contact__for { flex-basis: 100%; margin-bottom: -6px; font-size: var(--t-small); color: var(--ink-soft); }
+.contact__addr {
+  display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap;
+  font-size: 0.875rem; font-weight: 600; color: var(--ink);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; text-decoration-color: var(--ink-soft);
+  -webkit-user-select: text; user-select: text;
+  transition: text-decoration-color var(--d1) var(--ease-out);
+}
+.contact__addr:hover { text-decoration-color: var(--ink); }
+.copy {
+  min-width: 64px; min-height: 44px; padding: 0 var(--s2); border: 0; background: none; cursor: pointer;
+  font-size: var(--t-small); font-weight: 600; text-align: left; color: var(--ink-soft);
+  transition: color var(--d1) var(--ease-out);
+}
+.copy:hover, .copy.is-copied { color: var(--ink); }
+.connect__contact { margin-top: clamp(20px, 4svh, 40px); }
+
 @media (min-width: 900px) {
+  .connect__contact { grid-auto-flow: column; justify-content: start; margin-bottom: var(--s4); }
+  .connect__contact .contact__addr { font-size: 0.9375rem; }
   .connect__main { padding-bottom: var(--s7); }
   .connect__lead { max-width: 56%; }
   .connect { --ima: clamp(9rem, 17vw, 17rem); }
@@ -623,7 +645,8 @@ dialog::backdrop { background: none; }
 .form-sheet__head .icon-btn { margin-right: -12px; flex: none; }
 .form-sheet__title { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; letter-spacing: -0.04em; line-height: 1.1; }
 .form-sheet__aud { color: var(--c); }
-.demo-note { margin-top: var(--s2); font-size: var(--t-small); color: var(--ink-soft); }
+.form-note { margin-top: var(--s2); max-width: 520px; font-size: var(--t-small); color: var(--ink-soft); }
+.form-note__addr { font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
 .form { margin-top: var(--s5); display: grid; gap: var(--s5); max-width: 520px; }
 .field { display: grid; gap: 4px; }
 .field label { font-size: var(--t-small); font-weight: 600; }
@@ -644,6 +667,7 @@ dialog::backdrop { background: none; }
 .form-done { margin-top: var(--s7); display: grid; gap: var(--s4); justify-items: start; max-width: 420px; }
 .form-done:focus { outline: none; }
 .form-done__title { text-wrap: balance; font-family: var(--font-display); font-weight: 800; font-size: 2.5rem; letter-spacing: -0.04em; line-height: 1; }
+.form-done__fallback { margin-bottom: calc(-1 * var(--s4)); font-size: var(--t-small); color: var(--ink-soft); }
 @media (prefers-reduced-motion: no-preference) {
   .form-sheet.is-open .field, .form-sheet.is-open .form__submit {
     animation: field-in var(--d3) var(--ease-out) both; animation-delay: calc(var(--n, 0) * 60ms + 180ms);
@@ -669,10 +693,13 @@ dialog::backdrop { background: none; }
 }
 .site-footer .logo { margin-right: auto; }
 .site-footer__item { display: flex; align-items: center; min-height: 32px; }
-/* Development placeholders: shown as such on purpose until the real details are supplied. */
-.placeholder { padding: 2px 8px; border: 1px dashed var(--ink-soft); border-radius: 4px; }
+.contact--footer { gap: 0 var(--s5); }
+.contact--footer .contact__addr { font-size: var(--t-small); }
 @media (max-width: 899px) {
-  .site-footer .logo { flex-basis: 100%; }
+  .site-footer .logo, .contact--footer { flex-basis: 100%; }
+}
+@media (min-width: 900px) {
+  .contact--footer { grid-auto-flow: column; }
 }
 
 /* ---------- Reduced motion: nothing auto-plays, everything still reads and works ---------- */

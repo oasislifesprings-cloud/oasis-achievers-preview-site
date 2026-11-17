@@ -7,6 +7,13 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Oasis Achievers</title>
   <meta name="description" content="Oasis Achievers is a youth mentorship organization for high school juniors and seniors, starting in Baltimore. Where young ideas grow.">
+  <!-- The production address. The domain is not connected yet; this page is still served from the temporary preview. -->
+  <link rel="canonical" href="https://oasisachievers.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Oasis Achievers">
+  <meta property="og:title" content="Oasis Achievers">
+  <meta property="og:description" content="Oasis Achievers is a youth mentorship organization for high school juniors and seniors, starting in Baltimore. Where young ideas grow.">
+  <meta property="og:url" content="https://oasisachievers.org/">
   <meta name="theme-color" content="#F8F2EE">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="vendor/fonts/poppins-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -241,13 +248,28 @@
           <button class="pill pill--ink connect__cta" type="button" data-form-open aria-haspopup="dialog" aria-controls="connect-form">
             <span class="pill__label">Keep in touch</span>
           </button>
+
+          <!-- Both addresses are always visible text. The link and the copy button are conveniences. -->
+          <ul class="contact connect__contact" aria-label="Email Oasis Achievers">
+            <li class="contact__row">
+              <span class="contact__for">General questions</span>
+              <a class="contact__addr" href="mailto:info@oasisachievers.org" draggable="false">info@oasisachievers.org</a>
+              <button class="copy" type="button" data-copy="info@oasisachievers.org" aria-label="Copy info@oasisachievers.org">Copy</button>
+            </li>
+            <li class="contact__row">
+              <span class="contact__for">Partners, sponsors and schools</span>
+              <a class="contact__addr" href="mailto:partnerships@oasisachievers.org" draggable="false">partnerships@oasisachievers.org</a>
+              <button class="copy" type="button" data-copy="partnerships@oasisachievers.org" aria-label="Copy partnerships@oasisachievers.org">Copy</button>
+            </li>
+          </ul>
         </div>
 
+        <!-- data-mail: where each audience's form is addressed. Partners go to partnerships@, everyone else to info@. -->
         <div class="connect__tabs" role="group" aria-label="I’m a" data-tabs>
-          <button class="connect__tab" type="button" data-aud="student" aria-pressed="true" style="--c:var(--student)">student</button>
-          <button class="connect__tab" type="button" data-aud="parent" aria-pressed="false" style="--c:var(--parent)">parent</button>
-          <button class="connect__tab" type="button" data-aud="mentor" aria-pressed="false" style="--c:var(--mentor)">mentor</button>
-          <button class="connect__tab" type="button" data-aud="school partner" aria-pressed="false" style="--c:var(--partner)">school partner</button>
+          <button class="connect__tab" type="button" data-aud="student" data-mail="info@oasisachievers.org" aria-pressed="true" style="--c:var(--student)">student</button>
+          <button class="connect__tab" type="button" data-aud="parent" data-mail="info@oasisachievers.org" aria-pressed="false" style="--c:var(--parent)">parent</button>
+          <button class="connect__tab" type="button" data-aud="mentor" data-mail="info@oasisachievers.org" aria-pressed="false" style="--c:var(--mentor)">mentor</button>
+          <button class="connect__tab" type="button" data-aud="school partner" data-mail="partnerships@oasisachievers.org" aria-pressed="false" style="--c:var(--partner)">school partner</button>
           <span class="connect__underline" data-underline aria-hidden="true"></span>
         </div>
       </div>
@@ -261,7 +283,7 @@
             </button>
           </div>
 
-          <p class="demo-note">Demo form. Nothing you type here is sent or saved.</p>
+          <p class="form-note">This page does not send or save anything. The button opens an email to <span class="form-note__addr" data-form-mail>info@oasisachievers.org</span> in your own email app, ready for you to send.</p>
 
           <!-- STUDENT (minors: the minimum; flagged in DECISIONS.md for review) -->
           <form class="form" data-form="student" novalidate hidden>
@@ -311,22 +333,35 @@
           </form>
 
           <div class="form-done" data-form-done hidden tabindex="-1">
-            <p class="form-done__title">This is a demo.</p>
-            <p>Nothing was sent or saved. The form is not connected yet.</p>
+            <p class="form-done__title">Your email is ready.</p>
+            <p>It should have opened in your email app. Send it from there. This page does not send or save anything.</p>
+            <p class="form-done__fallback">If it did not open, write to:</p>
+            <p class="contact__row">
+              <a class="contact__addr" href="mailto:info@oasisachievers.org" draggable="false" data-mail-link>info@oasisachievers.org</a>
+              <button class="copy" type="button" data-copy="info@oasisachievers.org" aria-label="Copy info@oasisachievers.org" data-mail-copy>Copy</button>
+            </p>
             <button class="pill pill--ink" type="button" data-form-close><span class="pill__label">Close</span></button>
           </div>
         </div>
       </dialog>
+      <p class="sr-only" role="status" data-copy-status></p>
 
       <footer class="site-footer">
         <a class="logo logo--small" href="#top" aria-label="Oasis Achievers, back to top">
           <span class="mark" aria-hidden="true"><span class="mark__ink"></span></span>
           <span class="logo__word">oasis achievers</span>
         </a>
-        <!-- DEVELOPMENT PLACEHOLDERS: the contact email and social links have not been supplied. -->
-        <p class="site-footer__item"><span class="placeholder" data-placeholder>Contact email to come</span></p>
-        <p class="site-footer__item"><span class="placeholder" data-placeholder>Social links to come</span></p>
-        <p class="site-footer__item site-footer__copy">© 2026 Oasis Achievers</p>
+        <ul class="contact contact--footer" aria-label="Email Oasis Achievers">
+          <li class="contact__row">
+            <a class="contact__addr" href="mailto:info@oasisachievers.org" draggable="false">info@oasisachievers.org</a>
+            <button class="copy" type="button" data-copy="info@oasisachievers.org" aria-label="Copy info@oasisachievers.org">Copy</button>
+          </li>
+          <li class="contact__row">
+            <a class="contact__addr" href="mailto:partnerships@oasisachievers.org" draggable="false">partnerships@oasisachievers.org</a>
+            <button class="copy" type="button" data-copy="partnerships@oasisachievers.org" aria-label="Copy partnerships@oasisachievers.org">Copy</button>
+          </li>
+        </ul>
+        <p class="site-footer__item site-footer__copy">© 2026 Oasis Achievers · oasisachievers.org</p>
       </footer>
     </section>
   </main>
